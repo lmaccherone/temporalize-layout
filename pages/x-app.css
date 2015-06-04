@@ -16,7 +16,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 }
 
 paper-toolbar {
-  background-color: #42A5F5;
+  background-color: #356897;
 }
 
 .list {
@@ -25,7 +25,7 @@ paper-toolbar {
 }
 
 .list paper-item {
-  height: 80px;
+  height: 40px;
   border-bottom: 1px solid #dedede;
   background-color: #fafafa;
 }
@@ -41,11 +41,11 @@ paper-toolbar {
 }
 
 paper-material {
-  height: 1400px;
+  height: 1000px;
   background-color: #fff;
 }
 
 .main-panel[mode=cover] paper-material {
-  max-width: 640px;
+  max-width: 1080px;
   margin: 64px auto;
 }

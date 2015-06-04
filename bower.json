@@ -20,6 +20,7 @@
     "paper-menu": "polymerelements/paper-menu#^1.0.0",
     "paper-styles": "polymerelements/paper-styles#^1.0.0",
     "paper-toggle-button": "polymerelements/paper-toggle-button#^1.0.0",
-    "paper-toolbar": "polymerelements/paper-toolbar#^1.0.0"
+    "paper-toolbar": "polymerelements/paper-toolbar#^1.0.0",
+    "yako": "~0.5.0"
   }
 }
