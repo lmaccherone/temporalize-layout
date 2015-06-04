@@ -2,7 +2,7 @@
 Polymer({
   is: "x-app",
   ready: function() {
-    console.log('ready');
+    this.step = 0;
     return this.steps = [
       {
         index: 0
@@ -20,7 +20,6 @@ Polymer({
     }
   },
   _listTap: function() {
-    console.log('clicked');
     return this.$.drawerPanel.closeDrawer();
   },
   _isMobileChanged: function(isMobile) {

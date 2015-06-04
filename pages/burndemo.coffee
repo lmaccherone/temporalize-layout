@@ -2,7 +2,7 @@ Polymer
   is: "x-app"
 
   ready: ->
-    console.log('ready')
+    @step = 0
     @steps = [
       {index: 0}
       {index: 1}
@@ -15,7 +15,6 @@ Polymer
       observer: "_isMobileChanged"
 
   _listTap: ->
-    console.log('clicked')
     @$.drawerPanel.closeDrawer()
 
   _isMobileChanged: (isMobile) ->
