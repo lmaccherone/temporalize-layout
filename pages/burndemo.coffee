@@ -1,3 +1,5 @@
+# !TODO: Either use or remove iron-pages and page.js dependencies
+
 Polymer
   is: "x-app"
 
@@ -13,6 +15,7 @@ Polymer
     _isMobile:
       type: Boolean
       observer: "_isMobileChanged"
+    step: Number
 
   _listTap: ->
     @$.drawerPanel.closeDrawer()
@@ -22,3 +25,11 @@ Polymer
     @drawerWidth = (if isMobile then "100%" else "50px")
     @toolbarClass = (if isMobile then "" else "tall")
     @updateStyles()
+
+  forward: ->
+    unless @step >= @steps.length - 1
+      @step++
+
+  back: ->
+    unless @step is 0
+      @step--

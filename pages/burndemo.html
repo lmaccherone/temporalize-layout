@@ -9,6 +9,7 @@
 <link rel="import" href="../bower_components/paper-material/paper-material.html">
 <link rel="import" href="../bower_components/paper-menu/paper-menu.html">
 <link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../bower_components/iron-a11y-keys/iron-a11y-keys.html">
 
 <link rel="import" href="../elements/burn-chart/burn-chart.html">
 
@@ -19,6 +20,9 @@
   <link rel="import" type="css" href="burndemo.css">
 
   <template>
+
+    <iron-a11y-keys keys="right" on-keys-pressed="forward"></iron-a11y-keys>
+    <iron-a11y-keys keys="left" on-keys-pressed="back"></iron-a11y-keys>
 
     <paper-drawer-panel id="drawerPanel" responsive-width="1024px" drawer-width="{{drawerWidth}}">
 
@@ -49,8 +53,8 @@
 
           <span class="flex"></span>
 
-          <paper-icon-button icon="arrow-back"></paper-icon-button>
-          <paper-icon-button icon="arrow-forward"></paper-icon-button>
+          <paper-icon-button icon="arrow-back" on-tap="back"></paper-icon-button>
+          <paper-icon-button icon="arrow-forward" on-tap="forward"></paper-icon-button>
         </paper-toolbar>
 
         <div class="content">

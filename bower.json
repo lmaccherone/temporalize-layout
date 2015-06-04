@@ -23,6 +23,8 @@
     "paper-toggle-button": "polymerelements/paper-toggle-button#^1.0.0",
     "paper-toolbar": "polymerelements/paper-toolbar#^1.0.0",
     "yako": "~0.5.0",
-    "page": "visionmedia/page.js#~1.6.3"
+    "page": "visionmedia/page.js#~1.6.3",
+    "iron-a11y-keys-behavior": "polymerelements/iron-a11y-keys-behavior#~1.0.1",
+    "iron-a11y-keys": "polymerelements/iron-a11y-keys#~1.0.0"
   }
 }

@@ -17,7 +17,8 @@ Polymer({
     _isMobile: {
       type: Boolean,
       observer: "_isMobileChanged"
-    }
+    },
+    step: Number
   },
   _listTap: function() {
     return this.$.drawerPanel.closeDrawer();
@@ -27,5 +28,15 @@ Polymer({
     this.drawerWidth = (isMobile ? "100%" : "50px");
     this.toolbarClass = (isMobile ? "" : "tall");
     return this.updateStyles();
+  },
+  forward: function() {
+    if (!(this.step >= this.steps.length - 1)) {
+      return this.step++;
+    }
+  },
+  back: function() {
+    if (this.step !== 0) {
+      return this.step--;
+    }
   }
 });
