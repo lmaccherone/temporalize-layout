@@ -12,26 +12,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <html>
 <head>
 
-  <title>Application Layout Templates</title>
+  <title>List + Card Over</title>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
 
-  <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="viewer/device-layout-viewer.html">
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="src/x-app.html">
 
   <style>
 
     body {
       font-family: 'Roboto', sans-serif;
-      margin: 0;
-      background-color: #fafafa;
-      overflow: hidden;
-    }
-
-    device-layout-viewer {
-      height: 100vh;
     }
 
   </style>
@@ -39,12 +32,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </head>
 <body>
 
-  <device-layout-viewer show-all sources='[
-      {"name":"Nav List Detail","src":"nav-list-detail/index.html","github":"https://github.com/PolymerElements/app-layout-templates/tree/master/nav-list-detail"},
-      {"name":"Nav View","src":"nav-view/index.html","github":"https://github.com/PolymerElements/app-layout-templates/tree/master/nav-view"},
-      {"name":"Nav Cards","src":"nav-cards/index.html","github":"https://github.com/PolymerElements/app-layout-templates/tree/master/nav-cards"},
-      {"name":"List Card Over","src":"list-card-over/index.html","github":"https://github.com/PolymerElements/app-layout-templates/tree/master/list-card-over"}
-    ]'></device-layout-viewer>
+  <x-app></x-app>
 
 </body>
 </html>
