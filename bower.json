@@ -1,12 +1,11 @@
 {
-  "name": "app-layout-templates",
-  "version": "1.0.0",
-  "license": "http://polymer.github.io/LICENSE.txt",
-  "description": "Application layout templates",
+  "name": "temporalize-demo",
+  "version": "0.1.0",
+  "license": "Non-commercial and evaluation only.",
+  "description": "Demonstration of temporalize",
   "authors": [
-    "The Polymer Authors"
+    "Larry Maccherone"
   ],
-  "private": true,
   "dependencies": {
     "polymer": "polymer/polymer#^1.0.0",
     "iron-flex-layout": "polymerelements/iron-flex-layout#^1.0.0",
