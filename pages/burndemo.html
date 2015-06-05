@@ -33,7 +33,7 @@
     <!--<iron-a11y-keys keys="x" on-keys-pressed="forward"></iron-a11y-keys>-->
     <!--<iron-a11y-keys keys="left" on-keys-pressed="back"></iron-a11y-keys>-->
 
-    <paper-drawer-panel id="drawerPanel" responsive-width="1024px" drawer-width="{{drawerWidth}}">
+    <paper-drawer-panel id="drawerPanel" responsive-width="1024px" drawer-width="40px">
 
       <paper-header-panel class="list-panel" drawer mode="seamed">
 
@@ -52,7 +52,7 @@
 
       </paper-header-panel>
 
-      <paper-header-panel class="main-panel" main mode="{{mainMode}}">
+      <paper-header-panel class="main-panel" main mode="standard">
 
         <!-- Main Toolbar -->
         <paper-toolbar class$="{{toolbarClass}}">
@@ -66,31 +66,13 @@
           <paper-icon-button icon="arrow-forward" on-tap="forward"></paper-icon-button>
         </paper-toolbar>
 
-        <div class="content">
-
-
-          <paper-material>
-            <!-- Card Content -->
-            <burn-chart step="{{step}}"></burn-chart>
-
-            <!--<iron-pages selected="{{step}}" attr-for-selected="data-category">-->
-              <!--<template is="dom-repeat" items="{{steps}}">-->
-                <!--<section data-category$={{item.index}}>-->
-                  <!--<h1>{{item.index}}</h1>-->
-                <!--</section>-->
-              <!--</template>-->
-            <!--</iron-pages>-->
-          </paper-material>
-
-        </div>
+        <!--<div class="paper-header">This would be inside of the main content area</div>-->
+        <burn-chart class="fit content" step="{{step}}"></burn-chart>
 
       </paper-header-panel>
 
 
-
     </paper-drawer-panel>
-
-    <iron-media-query query="(max-width: 780px)" query-matches="{{_isMobile}}"></iron-media-query>
 
   </template>
 

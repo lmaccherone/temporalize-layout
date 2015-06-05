@@ -12,6 +12,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 }
 
 .main-panel {
+  background-color: #fff;
+  height: 100%;
+}
+
+.list-panel {
   background-color: #eee;
 }
 
@@ -30,23 +35,7 @@ paper-toolbar {
   background-color: #fafafa;
 }
 
-.main-panel[mode=cover] .content {
-  padding: 0 40px 0 4px;
-  height: 100%;
-}
-
-.main-panel {
-  --paper-header-panel-cover-container: {
-    left: 40px;
-  };
-}
-
-paper-material {
-  height: 100%;
-  background-color: #fff;
-}
-
-.main-panel[mode=cover] paper-material {
-  max-width: 1920px;
-  margin: 64px auto;
+.content {
+  padding: 0;
+  margin: 0;
 }

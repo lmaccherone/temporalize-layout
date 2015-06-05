@@ -15,19 +15,10 @@ Polymer
     console.log(document.querySelector('burn-Chart').step)
 
   properties:
-    _isMobile:
-      type: Boolean
-      observer: "_isMobileChanged"
     step: Number
 
   _listTap: ->
     @$.drawerPanel.closeDrawer()
-
-  _isMobileChanged: (isMobile) ->
-    @mainMode = (if isMobile then "seamed" else "cover")
-    @drawerWidth = (if isMobile then "100%" else "50px")
-    @toolbarClass = (if isMobile then "" else "tall")
-    @updateStyles()
 
   forward: ->
     if @step < @steps.length - 1 and @gestureActive

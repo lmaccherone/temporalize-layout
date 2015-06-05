@@ -16,20 +16,10 @@ Polymer({
     return console.log(document.querySelector('burn-Chart').step);
   },
   properties: {
-    _isMobile: {
-      type: Boolean,
-      observer: "_isMobileChanged"
-    },
     step: Number
   },
   _listTap: function() {
     return this.$.drawerPanel.closeDrawer();
-  },
-  _isMobileChanged: function(isMobile) {
-    this.mainMode = (isMobile ? "seamed" : "cover");
-    this.drawerWidth = (isMobile ? "100%" : "50px");
-    this.toolbarClass = (isMobile ? "" : "tall");
-    return this.updateStyles();
   },
   forward: function() {
     if (this.step < this.steps.length - 1 && this.gestureActive) {
