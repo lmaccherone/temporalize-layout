@@ -21,14 +21,14 @@
 <script src="../bower_components/x-tag-trap/dist/trap.js"></script>
 
 
-<dom-module id="x-app">
+<dom-module id="burn-demo">
 
-  <link rel="import" type="css" href="burndemo.css">
+  <link rel="import" type="css" href="burn-demo.css">
 
   <template>
 
-    <x-trap keys="right" gestures="panright" action="document.querySelector('x-app').forward();"/>
-    <x-trap keys="left" gestures="panleft" action="document.querySelector('x-app').back();"/>
+    <x-trap keys="right" gestures="panright" action="document.querySelector('burn-demo').forward();"/>
+    <x-trap keys="left" gestures="panleft" action="document.querySelector('burn-demo').back();"/>
 
     <!--<iron-a11y-keys keys="x" on-keys-pressed="forward"></iron-a11y-keys>-->
     <!--<iron-a11y-keys keys="left" on-keys-pressed="back"></iron-a11y-keys>-->
@@ -52,7 +52,7 @@
 
       </paper-header-panel>
 
-      <paper-header-panel class="main-panel" main mode="standard">
+      <paper-header-panel class="main-panel" main mode="seamed">
 
         <!-- Main Toolbar -->
         <paper-toolbar class$="{{toolbarClass}}">
@@ -76,6 +76,6 @@
 
   </template>
 
-  <script src="burndemo.js"></script>
+  <script src="burn-demo.js"></script>
 
 </dom-module>

@@ -1,7 +1,7 @@
 # !TODO: Either use or remove iron-pages and page.js dependencies
 
 Polymer
-  is: "x-app"
+  is: "burn-demo"
 
   ready: ->
     @gestureActive = true
@@ -11,7 +11,7 @@ Polymer
       {index: 1}
       {index: 2}
     ]
-    console.log(document.querySelector('burn-Chart').step)
+#    console.log(document.querySelector('burn-chart').step)
 
   properties:
     step: Number
@@ -32,4 +32,4 @@ Polymer
       setTimeout(@enableGesture, 200)
 
   enableGesture: ->
-    document.querySelector('x-app').gestureActive = true
+    document.querySelector('burn-demo').gestureActive = true
