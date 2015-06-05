@@ -1,6 +1,5 @@
 # !TODO: Either use or remove iron-pages and page.js dependencies
 
-
 Polymer
   is: "x-app"
 
