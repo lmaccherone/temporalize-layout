@@ -9,11 +9,17 @@
 <link rel="import" href="../bower_components/paper-material/paper-material.html">
 <link rel="import" href="../bower_components/paper-menu/paper-menu.html">
 <link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
-<link rel="import" href="../bower_components/iron-a11y-keys/iron-a11y-keys.html">
+<!--<link rel="import" href="../bower_components/iron-a11y-keys/iron-a11y-keys.html">-->
 
 <link rel="import" href="../elements/burn-chart/burn-chart.html">
 
 <!--<link rel="import" href="../elements/routing.html">-->
+
+<script src="../bower_components/x-tag-trap/dist/x-tag-components.js"></script>
+<script src="../bower_components/x-tag-trap/dist/hammer.min.js"></script>
+<script src="../bower_components/x-tag-trap/dist/mousetrap.min.js"></script>
+<script src="../bower_components/x-tag-trap/dist/trap.js"></script>
+
 
 <dom-module id="x-app">
 
@@ -21,8 +27,11 @@
 
   <template>
 
-    <iron-a11y-keys keys="right" on-keys-pressed="forward"></iron-a11y-keys>
-    <iron-a11y-keys keys="left" on-keys-pressed="back"></iron-a11y-keys>
+    <x-trap keys="right" gestures="panright" action="document.querySelector('x-app').forward();"/>
+    <x-trap keys="left" gestures="panleft" action="document.querySelector('x-app').back();"/>
+
+    <!--<iron-a11y-keys keys="x" on-keys-pressed="forward"></iron-a11y-keys>-->
+    <!--<iron-a11y-keys keys="left" on-keys-pressed="back"></iron-a11y-keys>-->
 
     <paper-drawer-panel id="drawerPanel" responsive-width="1024px" drawer-width="{{drawerWidth}}">
 
@@ -49,7 +58,7 @@
         <paper-toolbar class$="{{toolbarClass}}">
           <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
 
-          <h1 class="top">Temporalize</h1>
+          <h1 class="top">Lumenize</h1>
 
           <span class="flex"></span>
 
@@ -59,9 +68,11 @@
 
         <div class="content">
 
+
           <paper-material>
             <!-- Card Content -->
             <burn-chart step="{{step}}"></burn-chart>
+
             <!--<iron-pages selected="{{step}}" attr-for-selected="data-category">-->
               <!--<template is="dom-repeat" items="{{steps}}">-->
                 <!--<section data-category$={{item.index}}>-->
@@ -74,6 +85,8 @@
         </div>
 
       </paper-header-panel>
+
+
 
     </paper-drawer-panel>
 

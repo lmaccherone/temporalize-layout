@@ -25,6 +25,10 @@
     "yako": "~0.5.0",
     "page": "visionmedia/page.js#~1.6.3",
     "iron-a11y-keys-behavior": "polymerelements/iron-a11y-keys-behavior#~1.0.1",
-    "iron-a11y-keys": "polymerelements/iron-a11y-keys#~1.0.0"
+    "iron-a11y-keys": "polymerelements/iron-a11y-keys#~1.0.0",
+    "x-tag-trap": "~1.0.0"
+  },
+  "resolutions": {
+    "polymer": "^1.0.0"
   }
 }

@@ -2,8 +2,9 @@
 Polymer({
   is: "x-app",
   ready: function() {
+    this.gestureActive = true;
     this.step = 0;
-    return this.steps = [
+    this.steps = [
       {
         index: 0
       }, {
@@ -12,6 +13,7 @@ Polymer({
         index: 2
       }
     ];
+    return console.log(document.querySelector('burn-Chart').step);
   },
   properties: {
     _isMobile: {
@@ -30,13 +32,20 @@ Polymer({
     return this.updateStyles();
   },
   forward: function() {
-    if (!(this.step >= this.steps.length - 1)) {
-      return this.step++;
+    if (this.step < this.steps.length - 1 && this.gestureActive) {
+      this.gestureActive = false;
+      this.step++;
+      return setTimeout(this.enableGesture, 200);
     }
   },
   back: function() {
-    if (this.step !== 0) {
-      return this.step--;
+    if (this.step > 0 && this.gestureActive) {
+      this.gestureActive = false;
+      this.step--;
+      return setTimeout(this.enableGesture, 200);
     }
+  },
+  enableGesture: function() {
+    return document.querySelector('x-app').gestureActive = true;
   }
 });

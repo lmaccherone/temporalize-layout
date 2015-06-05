@@ -8,22 +8,22 @@ Polymer({
     }
   },
   created: function() {
-    var rect, root, svg;
+    var rect, svg;
     svg = window.yako.svg;
-    root = svg.create('svg').attr({
+    this.root = svg.create('svg').attr({
       id: 'burn-chart',
       xmlns: "http://www.w3.org/2000/svg",
       width: '100%',
       height: '100%',
       'xmlns:xlink': "http://www.w3.org/1999/xlink"
     });
-    rect = '<rect id="SvgjsRect1006" width="100%" height="300" x="0" y="0" fill="none" stroke="#000000" stroke-width="1"></rect>';
-    return root.append(rect);
+    rect = '<rect id="SvgjsRect1006" width="100%" height="100%" x="0" y="0" fill="none" stroke="#000000" stroke-width="1"></rect>';
+    return this.root.append(rect);
   },
   setAttribute: function(attr, value) {
     return this.innerHTML = "The value of attribute " + attr + " is " + value;
   },
   gotoStep: function(step) {
-    return this.innerHTML = "the value is " + step;
+    return this.innerHTML = this.root.stringify();
   }
 });
