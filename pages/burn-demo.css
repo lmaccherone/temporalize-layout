@@ -1,0 +1,32 @@
+:host {
+  display: block;
+}
+
+.main-panel {
+  background-color: #fff;
+  height: 100%;
+}
+
+.list-panel {
+  background-color: #eee;
+}
+
+paper-toolbar {
+  background-color: #356897;
+}
+
+.list {
+  padding: 0;
+  border-right: 1px solid #ccc;
+}
+
+.list paper-item {
+  height: 40px;
+  border-bottom: 1px solid #dedede;
+  background-color: #fafafa;
+}
+
+.content {
+  padding: 0;
+  margin: 0;
+}
