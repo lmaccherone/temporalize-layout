@@ -11,8 +11,30 @@
   background-color: #eee;
 }
 
+.iron-selected {
+  background-color: #fff !important;
+}
+
+.list-panel {
+  --paper-menu-focused-item: {
+    background-color: #fff !important;
+  };
+}
+
+.list-panel {
+  --paper-menu-selected-item: {
+    background-color: #fff !important;
+  };
+}
+
 paper-toolbar {
   background-color: #356897;
+}
+
+paper-dialog {
+  left: 10px;
+  top: 10px;
+  width: 300px;
 }
 
 .list {

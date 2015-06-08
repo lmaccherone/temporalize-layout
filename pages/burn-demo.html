@@ -9,6 +9,11 @@
 <link rel="import" href="../bower_components/paper-material/paper-material.html">
 <link rel="import" href="../bower_components/paper-menu/paper-menu.html">
 <link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../bower_components/neon-animation/animations/scale-up-animation.html">
+<link rel="import" href="../bower_components/neon-animation/animations/fade-out-animation.html">
+
+
 <!--<link rel="import" href="../bower_components/iron-a11y-keys/iron-a11y-keys.html">-->
 
 <link rel="import" href="../elements/burn-chart/burn-chart.html">
@@ -33,7 +38,7 @@
     <!--<iron-a11y-keys keys="x" on-keys-pressed="forward"></iron-a11y-keys>-->
     <!--<iron-a11y-keys keys="left" on-keys-pressed="back"></iron-a11y-keys>-->
 
-    <paper-drawer-panel id="drawerPanel" responsive-width="1024px" drawer-width="40px">
+    <paper-drawer-panel id="drawerPanel" responsive-width="900px" drawer-width="40px" right-drawer>
 
       <paper-header-panel class="list-panel" drawer mode="seamed">
 
@@ -42,10 +47,10 @@
         </paper-toolbar>
 
         <!-- List -->
-        <paper-menu class="list" on-iron-activate="_listTap" selected="{{step}}" attr-for-selected="data-category">
-          <template is="dom-repeat" items="{{steps}}">
-            <paper-item data-category$="{{item.index}}" label$="{{item.index}}">
-              <span>{{item.index}}</span>
+        <paper-menu class="list-panel" on-iron-activate="_listTap" selected="{{step}}" attr-for-selected="data-category">
+          <template is="dom-repeat" items="{{steps}}" index-as="index">
+            <paper-item data-category$="{{index}}" label$="{{index}}">
+              <span>{{index}}</span>
             </paper-item>
           </template>
         </paper-menu>
@@ -67,7 +72,11 @@
         </paper-toolbar>
 
         <!--<div class="paper-header">This would be inside of the main content area</div>-->
-        <burn-chart class="fit content" step="{{step}}"></burn-chart>
+        <burn-chart id="burn-chart" class="fit content" config="[[chartConfig]]"></burn-chart>
+
+        <paper-dialog id="intro" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
+          <h3>{{dialog}}</h3>
+        </paper-dialog>
 
       </paper-header-panel>
 
