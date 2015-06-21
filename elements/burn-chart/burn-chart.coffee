@@ -63,6 +63,23 @@ class Line extends Tag
   @setDefaultAttributes: (newOrOverideAttributes) ->
     @defaultAttributes[key] = value for key, value of newOrOverideAttributes
 
+class Circle extends Tag
+  Circle.defaultAttributes =
+    stroke: 'none'
+    fill: 'black'
+
+  constructor: (cx, cy, r, @tagAttributes = {}, @parent = null) ->
+    @tagAttributes.cx = "#{cx}%"
+    @tagAttributes.cy = "#{cy}%"
+    @tagAttributes.r = "#{r}"
+    if Circle.defaultAttributes?
+      for key, value of Circle.defaultAttributes
+        @tagAttributes[key] = value
+    return super('circle', @tagAttributes, @parent)
+
+  @setDefaultAttributes: (newOrOverideAttributes) ->
+    @defaultAttributes[key] = value for key, value of newOrOverideAttributes
+
 class LineSeries extends Tag
   constructor: (x0, y0, periodWidth, series, @tagAttributes = {}, @parent = null) ->
     unless series?
@@ -76,6 +93,7 @@ class LineSeries extends Tag
         i++
       x1 = x
       y1 = y0 - series[i]
+      Circle(x1, y1, 5, null, lineSeries)
       i++
       x += periodWidth
       while i < series.length
@@ -85,6 +103,7 @@ class LineSeries extends Tag
           x2 = x
           y2 = y0 - point
           line = Line(x1, y1, x2, y2, null, lineSeries)
+          Circle(x2, y2, 5, null, lineSeries)
           x1 = x2
           y1 = y2
 
@@ -175,17 +194,20 @@ Polymer(
       periodWidth = chartWidth / @config.periods
       x0 = chartLeft
       y0 = bottomChartBottom
-#      scale = 1
-#      yOffset = 0
+
       Line.setDefaultAttributes({stroke: 'red'})
+      Circle.setDefaultAttributes({fill: 'red'})
       LineSeries(x0, y0, periodWidth, @config.burnSeries, null, lowerChart)
       Line.setDefaultAttributes({stroke: 'green'})
+      Circle.setDefaultAttributes({fill: 'green'})
       LineSeries(x0, y0, periodWidth, @config.scopeSeries, null, lowerChart)
       Line.setDefaultAttributes({'stroke-dasharray': "5,7"})
       LineSeries(x0, y0, periodWidth, @config.scopeProjection, null, lowerChart)
       Line.setDefaultAttributes({stroke: 'blue'})
+      Circle.setDefaultAttributes({fill: 'blue'})
       LineSeries(x0, y0, periodWidth, @config.linearProjection, null, lowerChart)
       Line.setDefaultAttributes({stroke: 'orange'})
+      Circle.setDefaultAttributes({fill: 'orange'})
 
       if @config.forecastProjections?
         for series in @config.forecastProjections
@@ -207,10 +229,6 @@ Polymer(
             if point?
               Rect(priorX, y0 - point, periodWidth, point, attributes, upperChart)
           priorX = x
-
-
-
-
 
       @innerHTML = root
 )

@@ -32,13 +32,15 @@
 
   <template>
 
+    <x-trap keys="pagedown" gestures="panright" action="document.querySelector('burn-demo').forward();"/>
     <x-trap keys="right" gestures="panright" action="document.querySelector('burn-demo').forward();"/>
+    <x-trap keys="pageup" gestures="panleft" action="document.querySelector('burn-demo').back();"/>
     <x-trap keys="left" gestures="panleft" action="document.querySelector('burn-demo').back();"/>
 
     <!--<iron-a11y-keys keys="x" on-keys-pressed="forward"></iron-a11y-keys>-->
     <!--<iron-a11y-keys keys="left" on-keys-pressed="back"></iron-a11y-keys>-->
 
-    <paper-drawer-panel id="drawerPanel" responsive-width="900px" drawer-width="40px" right-drawer>
+    <paper-drawer-panel id="drawerPanel" responsive-width="900px" drawer-width="40px" left-drawer>
 
       <paper-header-panel class="list-panel" drawer mode="seamed">
 
@@ -63,7 +65,7 @@
         <paper-toolbar class$="{{toolbarClass}}">
           <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
 
-          <h1 class="top">Lumenize</h1>
+          <h1 class="top">http://maccherone.com/lumenize/</h1>
 
           <span class="flex"></span>
 
